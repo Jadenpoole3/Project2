@@ -22,7 +22,7 @@ const CompanySchema = new Schema ({
         type: String,
         required: true
     },
-    City: {
+    state: {
         type: String,
         required: true
     },
