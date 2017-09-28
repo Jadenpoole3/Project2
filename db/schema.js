@@ -32,3 +32,9 @@ const CompanySchema = new Schema ({
 //Creating model
 const CompanyModel= mongoose.model('Company', CompanySchema)
 const QuestionModel = mongoose.model('Question', QuestionSchema)
+
+//Export the file out and the model out 
+module.exports = {
+    CompanyModel: CompanyModel,
+    QuestionModel: QuestionModel
+}
