@@ -30,6 +30,9 @@ console.log(err);
 });
 
 //Create Information For Companies and Questions
-const facebook = new CompanyModel({ name: 'FaceBook', state: 'California' })
-const goole = new CompanyModel({ name: 'Google', country: 'US' })
-const ktwo = new CompanyModel({ name: 'K2', country: 'Canada' })
+const google = new CompanyModel({ name: 'Google', state: 'California' })
+const cnn = new CompanyModel({ name: 'CNN', state: 'Georgia' })
+const abc = new CompanyModel({ name: 'ABC', state: 'New York' })
+
+const tellQuestion = new QuestionModel({name: 'Tell me about yourself', answer: 'I am currently working as an mobile sales representative, where I activated phones and put customers on carrier plans.And while I really enjoyed the work that I did, I’d love the chance to dig in much deeper with one specific Web Developement company'})
+const 
