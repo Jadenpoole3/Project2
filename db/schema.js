@@ -29,4 +29,6 @@ const CompanySchema = new Schema ({
     questions: [QuestionSchema]
 });
 
-//Create 
+//Creating model
+const CompanyModel= mongoose.model('Company', CompanySchema)
+const QuestionModel = mongoose.model('Question', QuestionSchema)
