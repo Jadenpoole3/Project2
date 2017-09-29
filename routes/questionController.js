@@ -28,6 +28,22 @@ router.get('/', (request,response) => {
     
 })
 
+
+
+//New Route
+router.get('/new', (request, response) => {
+    
+        // Get the company ID from the parameters
+        const companyId = request.params.companyId
+    
+        // RENDER a new form for a fresh question,
+        // also passing the companyId to use in the
+        // form's ACTION
+        response.render('questions/new', {
+            companyId: companyId
+        })
+    })
+
 // CREATE route
 router.post('/', (request, response) => {
     
@@ -54,6 +70,9 @@ router.post('/', (request, response) => {
                 response.redirect(`/companies/${companyId}/questions`)
             })
     
+
+
+
     })
     // EDIT route
 router.get('/:questionId/edit', (request, response) => {

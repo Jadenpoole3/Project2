@@ -42,9 +42,9 @@ const whereQuestion = new QuestionModel({questions:'Where do you see yourself in
 const companies =[google,cnn,abc]
 const questions = [tellQuestion,whyQuestion,whereQuestion]
 
-companies.forEach((company) => {
+companies.forEach((company, i) => {
     
-        company.questions = questions
+        company.questions.push(questions[i])
     
         company.save()
             .then((company) => {
