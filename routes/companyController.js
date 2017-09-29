@@ -23,4 +23,29 @@ router.get('/', (request, response) => {
     })
 })
 
+// NEW route
+router.get('/new', (request,response) => {
+    //Render
+    response.render('companies/new') 
+})
+
+
+
+// CREATE route
+router.post('/', (request, response) => {
+    
+        // getting new company info and putting it into the request body
+        const newCompany = request.body
+    
+        // CREATE and SAVE a new Company using the CompanyModel
+        CompanyModel.create(newCompany)
+            .then(() => {
+                // THEN once the model has saved, redirect to the Companies INDEX
+                response.redirect('/companies')
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    })
+
 module.exports = router
