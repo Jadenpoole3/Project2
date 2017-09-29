@@ -1,0 +1,9 @@
+<form action="/companies/{{companyId}}/questions/{{question._id}}?_method=PUT" method="POST">
+    <label for="question">Question</label>
+    <input type="text" name="question" value="{{question.name}}">
+
+    <label for="answer">Answer</label>
+    <input type="number" name="answer" value="{{question.price}}" step="any">
+
+    <input type="submit" value="Edit">
+</form>

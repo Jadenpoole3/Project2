@@ -55,5 +55,34 @@ router.post('/', (request, response) => {
             })
     
     })
+    // EDIT route
+router.get('/:questionId/edit', (request, response) => {
+    
+        // GRAB the company ID from the parameters
+        const companyId = request.params.companyId
+    
+        // GRAB the question ID from the parameters
+        const questionId = request.params.questionId
+    
+        // USE the CompanyModel to find the company by ID
+        CompanyModel.findById(companyId)
+            .then((company) => {
+                // THEN once the company has been returned,
+                // FIND the question by ID that you want to edit
+                const question = company.questions.id(snowboardId)
+    
+                // RENDER a form pre-populated with that question info,
+                // ALSO passing the companyId to use for the form's ACTION
+                response.render('questions/edit', {
+                    question: question,
+                    companyId: companyId
+                })
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    })
+    
+
 
 module.exports = router
