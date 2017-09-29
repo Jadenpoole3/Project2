@@ -69,7 +69,7 @@ router.post('/', (request, response) => {
                 })
         })
 
-
+//Update Route
         router.put('/:companyId', (request, response) => {
             
                 // GRAB the company ID from the parameters
