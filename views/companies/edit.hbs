@@ -1,0 +1,9 @@
+<form action="/companies/{{company._id}}?_method=PUT" method="POST">
+<label for="name">Name</label>
+<input type="text" name="name" value="{{company.name}}">
+
+<label for="state">State</label>
+<input type="text" name="state" value="{{company.state}}">
+
+<input type="submit" value="Edit">
+</form>
