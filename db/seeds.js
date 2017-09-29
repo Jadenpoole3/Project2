@@ -7,6 +7,9 @@ const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI)
 const db = mongoose.connection;
 
+//seed heroku 
+//mongoose.connect('mongodb://heroku_xlbrnqj3:41qa8g7dsb7hrc20ov7r1q58in@ds155424.mlab.com:55424/heroku_xlbrnqj3')
+
 //Shows error if it can not connect to Mongoose 
 db.on('error', (err) => {
 console.log(err);
