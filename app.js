@@ -6,14 +6,16 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+const methodOverride = require('method-override')
 
 var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI);
 
-var indexController = require('./routes/indexController');
-const companyController = require('./routes/companyController');
 
 var app = express();
+
+app.use(methodOverride('_method'))
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -27,9 +29,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//Registering controllers
+var indexController = require('./routes/indexController');
+const companyController = require('./routes/companyController');
+
 app.use('/', indexController);
 app.use('/companies', companyController);
 
+const questionController = require('./routes/questionController')
+app.use('/companies/:companyId/questions', questioController)
 
 
 // catch 404 and forward to error handler

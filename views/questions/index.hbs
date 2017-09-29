@@ -11,7 +11,7 @@ div>
     
     {{#each company.questions}}
         <div>
-            {{this.name}} - {{this.price}}
+            {{this.questions}} - {{this.answers}}
             <a href="/companies/{{../company._id}}/questions/{{this._id}}">View</a>
         </div>
     {{/each}}
