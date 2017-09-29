@@ -37,7 +37,7 @@ app.use('/', indexController);
 app.use('/companies', companyController);
 
 const questionController = require('./routes/questionController')
-app.use('/companies/:companyId/questions', questioController)
+app.use('/companies/:companyId/questions', questionController)
 
 
 // catch 404 and forward to error handler

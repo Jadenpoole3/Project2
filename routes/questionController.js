@@ -6,7 +6,7 @@ const Schema = require("../db/schema.js");
 const CompanyModel = Schema.CompanyModel;
 
 //index route
-route.get('/', (request,response) => {
+router.get('/', (request,response) => {
     // get the id from the params 
     const companyId = request.params.companyId
 
