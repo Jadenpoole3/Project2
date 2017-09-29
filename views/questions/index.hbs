@@ -1,5 +1,5 @@
-div>
-    <h1>{{company.name}}'s Snowboards</h1>
+<div>
+    <h1>{{company.name}}'s Questions</h1>
 
     <div>
         <a href="/companies/{{company._id}}/questions/new">Create a New Questions</a>
@@ -11,7 +11,7 @@ div>
     
     {{#each company.questions}}
         <div>
-            {{this.questions}} - {{this.answers}}
+            {{this.questions}} - {{this.answer}}
             <a href="/companies/{{../company._id}}/questions/{{this._id}}">View</a>
         </div>
     {{/each}}

@@ -31,13 +31,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //Registering controllers
 var indexController = require('./routes/indexController');
-const companyController = require('./routes/companyController');
-
 app.use('/', indexController);
+
+const companyController = require('./routes/companyController');
 app.use('/companies', companyController);
 
-const questionController = require('./routes/questionController')
+const questionController = require('./routes/questionController');
 app.use('/companies/:companyId/questions', questionController)
+
+
+
 
 
 // catch 404 and forward to error handler
