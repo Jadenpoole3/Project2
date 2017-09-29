@@ -100,6 +100,19 @@ router.put('/:companyId', (request, response) => {
 
 
         //Get the Company ID
+        const companyId = request.params.companyId
+
+        //Use the model to find the id in the dbs
+        CompanyModel.findById(companyId)
+        .then((company) => {
+            //Render it again and use companies show
+            response.render('companies/show', {
+                company: company
+            })
+        })
+        .catch((error) => {
+            console.log(error)
+        })
     })
     
 
