@@ -146,6 +146,31 @@ router.put('/:questionId', (request, response) => {
             })
     })
 
+    // DELETE route
+router.get('/:questionId/delete', (request, response) => {
+    
+        // GRAB the company ID from the parameters
+        const companyId = request.params.companyId
+        
+        // GRAB the question ID from the parameters
+        const questionId = request.params.questionId
+    
+        // USE the CompanyModel to find the company by ID
+        CompanyModel.findById(companyId)
+            .then((company) => {
+                // THEN once the company has been returned,
+                // REMOVE the question from the company's question array
+                const question = company.questions.id(questionId).remove()
+    
+                // THEN save the company and return the PROMISE
+                return company.save()
+            })
+            .then(() => {
+                // THEN once the company has saved, redirect to the 
+                // company's questions INDEX page
+                response.redirect(`/companies/${companyId}/questions`)
+            })
+    })
     
 
 
