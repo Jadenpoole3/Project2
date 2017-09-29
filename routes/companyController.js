@@ -49,51 +49,49 @@ router.post('/', (request, response) => {
     })
 
     //Edit Router
-
-    router.get('/:companyId/edit', (request,respone) => {
-        //Getting the company Id
-        const companyId = request.params.companyId
-
-        //Find the company by ID
-    CompanyModel.findById(companyId)
-    .then((company) => {
-
-        //Render it again 
-        //Return it from the dbs
-
-        response.render('companies/edit', {
-            company: company
+    router.get('/:companyId/edit', (request, response) => {
+        
+            // GRAB the company ID from the parameters
+            const companyId = request.params.companyId
+        
+            // FIND the company by ID using the CompanyModel
+            CompanyModel.findById(companyId)
+                .then((company) => {
+                    // THEN once the company has been returned from
+                    // the database, RENDER a form containing the current
+                    // company information
+                    response.render('companies/edit', {
+                        company: company
+                    })
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
         })
-    })
-    //Catch the error 
-    .catch((error) => {
-        console.log(error)
-    })
 
-    })
 
-    // UPDATE route
-router.put('/:companyId', (request, response) => {
-    
-        // Get the company ID from the parameters
-        const companyId = request.params.companyId
-    
-        // Get the updated Company info from the request body
-        const updatedCompany = request.body
-    
-        // Use Mongoose to find the company by ID and update it with the 
-        // new company info. Be sure to include the {new: true} option as your
-        // third parameter
-        CompanyModel.findByIdAndUpdate(companyId, updatedCompany, { new: true })
-            .then(() => {
-                // THEN once the new company info has been saved,
-                // redirect to that company's SHOW page
-                response.redirect(`/companies/${companyId}`)
+        router.put('/:companyId', (request, response) => {
+            
+                // GRAB the company ID from the parameters
+                const companyId = request.params.companyId
+            
+                // GRAB the updated Company info from the request body
+                const updatedCompany = request.body
+            
+                // Use Mongoose to find the company by ID and update it with the 
+                // new company info. Be sure to include the {new: true} option as your
+                // third parameter
+                CompanyModel.findByIdAndUpdate(companyId, updatedCompany, { new: true })
+                    .then(() => {
+                        // THEN once the new company info has been saved,
+                        // redirect to that company's SHOW page
+                        response.redirect(`/companies/${companyId}`)
+                    })
+                    .catch((error) => {
+                        console.log(error)
+                    })
             })
-            .catch((error) => {
-                console.log(error)
-            })
-    })
+
 
     // Show Route 
     router.get('/:companyId', (request,response) => {
@@ -114,6 +112,26 @@ router.put('/:companyId', (request, response) => {
             console.log(error)
         })
     })
+
+    // Delete Route 
+    router.get('/:companyId/delete', (request,response) => {
+
+        //get the company ID that I want to delete 
+        const companyId = request.params.companyId
+        
+
+        //Company Model
+        CompanyModel.findByIdAndRemove(companyId)
+.then(() => {
+    //redirect back to the companies index
+    response.redirect('/companies')
+
+//Catch your errors 
+.catch((error) => {
+console.log(error)
+}) 
+    })
+})
     
 
 module.exports = router
