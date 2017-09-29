@@ -26,8 +26,13 @@ const CompanySchema = new Schema ({
         type: String,
         required: true
     },
+    logo: {
+        type: String
+    },
     questions: [QuestionSchema]
 });
+
+
 
 //Creating model
 const CompanyModel= mongoose.model('Company', CompanySchema)

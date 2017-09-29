@@ -2,9 +2,31 @@ body {
   padding: 50px;
   font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
   display: flex;
+  background-color: lightcoral;
+  justify-content: center;
 
 }
 
 a {
   color: #00B7FF;
 }
+
+img {
+  height: 200px;
+  width: 50%;
+  
+}
+
+input {
+  color: lawngreen;
+}
+
+logo {
+  height: 300px;
+  width: 50%;
+}
+
+label {
+  color: black;
+}
+
