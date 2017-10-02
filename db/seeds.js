@@ -34,10 +34,10 @@ console.log(err);
 
 //Create Information For Companies and Questions
 const google = new CompanyModel({ name: 'Google', state: 'California', logo: 'https://media.giphy.com/media/q0omTny54J8ru/giphy.gif' })
-const cnn = new CompanyModel({ name: 'CNN', state: 'Georgia', logo: 'https://media.giphy.com/media/MXtdiFdLmGSGc/giphy.gif'})
+const cnn = new CompanyModel({ name: 'CNN', state: 'Georgia', logo: 'https://media.giphy.com/media/15zWDW9K8VhPG/giphy.gif'})
 const abc = new CompanyModel({ name: 'ABC', state: 'New York', logo: 'https://media.giphy.com/media/GjB41rKHBnOkE/giphy.gif'})
 
-const tellQuestion = new QuestionModel({questions: 'Tell me about yourself', answer: 'I am currently working as an mobile sales representative, where I activated phones and put customers on carrier plans.And while I really enjoyed the work that I did, I’d love the chance to dig in much deeper with one specific Web Developement company'})
+const tellQuestion = new QuestionModel({questions: 'Tell me about yourself', answer: 'I am currently working as an mobile sales representative, where I activated phones and put customers on carrier plans,and while I really enjoyed the work that I did, I’d love the chance to dig in much deeper with one specific Web Developement company'})
 const whyQuestion = new QuestionModel({questions:'Why do you want to work here', answer: 'I really believe in the value of teamwork and so when I saw a position with your company to join your engineering department I had to make sure my application was put in.  I believe strongly in working with other people towards a common goal'})
 const whereQuestion = new QuestionModel({questions:'Where do you see yourself in five years', answer: 'My goal right now is to find a position at a company where I can grow and take on new challenges over time. Ultimately, I’d like to assume more management responsibilities and get involved in product strategy.'})
 

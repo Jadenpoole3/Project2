@@ -1,5 +1,9 @@
 <div>
-    {{question.questions}} - {{question.answer}}
+    <ul>
+       <li>{{question.questions}} ? </li> 
+          <li>{{question.answer}}</li>
+    </ul>
+   
     <a href="/companies/{{companyId}}/questions/{{question._id}}/edit">Edit</a>
     <a href="/companies/{{companyId}}/questions/{{question._id}}/delete">Delete</a>
 </div>

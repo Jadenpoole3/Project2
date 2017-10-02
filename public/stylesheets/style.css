@@ -1,10 +1,6 @@
 body {
-  padding: 50px;
   font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
-  display: flex;
-  background-color: lightcoral;
-  justify-content: center;
-
+  background-color: slategray;
 }
 
 a {
@@ -13,20 +9,23 @@ a {
 
 img {
   height: 200px;
-  width: 50%;
+  width: 20%;
+  background-color: gray;
   
 }
 
 input {
-  color: lawngreen;
+  color: black;
 }
 
-logo {
-  height: 300px;
-  width: 50%;
-}
 
 label {
   color: black;
 }
+
+
+.nav-wrapper {
+  color: lightblue;
+}
+
 
