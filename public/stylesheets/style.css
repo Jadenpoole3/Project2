@@ -1,6 +1,7 @@
 body {
   font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: slategray;
+  
 }
 
 a {
@@ -14,18 +15,19 @@ img {
   
 }
 
-input {
+ input {
   color: black;
 }
 
 
 label {
   color: black;
-}
+} */
 
 
 .nav-wrapper {
-  color: lightblue;
+  color: light;
 }
+
 
 

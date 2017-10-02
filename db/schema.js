@@ -33,13 +33,32 @@ const CompanySchema = new Schema ({
 });
 
 
+const UserSchema = new Schema ({
+    username: {
+        type: String,
+        required: true
+
+    },
+    password: {
+        type: String,
+        required: true
+
+    }
+
+
+
+});
+
+
 
 //Creating model
+const UserModel = mongoose.model('User', UserSchema)
 const CompanyModel= mongoose.model('Company', CompanySchema)
 const QuestionModel = mongoose.model('Question', QuestionSchema)
 
 //Export the file out and the model out 
 module.exports = {
     CompanyModel: CompanyModel,
-    QuestionModel: QuestionModel
+    QuestionModel: QuestionModel,
+    UserModel: UserModel
 }

@@ -39,6 +39,8 @@ app.use('/companies', companyController);
 const questionController = require('./routes/questionController');
 app.use('/companies/:companyId/questions', questionController)
 
+const userController = require("./routes/userController");
+app.use('/users', userController);
 
 
 
