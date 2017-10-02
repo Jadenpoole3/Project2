@@ -29,5 +29,10 @@ label {
   color: light;
 }
 
+.video-container {
+  width: 50%;
+  height: 10px;
+  
+}
 
 
