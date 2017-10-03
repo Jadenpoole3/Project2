@@ -1,12 +1,13 @@
  <nav >
     <div class="nav-wrapper light-blue lighten">
-         
 
-      <a href="https://bobtheriot.files.wordpress.com/2015/07/interview-logo.png" class="brand-logo right">Get Prep</a>
+     
+
+      <a href="" class="brand-logo right">Get Prep'd</a>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li><a href="users/new"> Create User </a></li>
         <li><a href="/users"> Demos </a></li>
-        <li><a href="collapsible.html">Jobs</a></li>
+        <li><a href="/users/show">Items to Have </a></li>
       </ul>
     </div>
   </nav>
@@ -14,14 +15,20 @@
   <div class="center">
         
 
-    <h1>Get Prep</h1>
+
+
+    <h1>Get Prep'd</h1>
     <img src="https://bobtheriot.files.wordpress.com/2015/07/interview-logo.png" alt="Get Prep">
 
 
-    <h3>Companies</h3>
-    <div>
-        <a href="/companies/new">Add New Company</a> 
+  <h3>Companies</h3>
+    <div> 
+
+      <a href="/companies/new" class="btn" onclick="Materialize.showStaggeredList('#staggered-test')"> Add New Company</a> <br>
+        
+        {{!-- <a href="/companies/new">Add New Company</a>  --}}
     </div>
+    <br>
     {{#each companies}}
     <div>
         {{this.name}} - {{this.state}}

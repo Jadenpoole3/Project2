@@ -49,6 +49,26 @@ router.post('/', (request, response) => {
             })
     })
 
+    // Show Route 
+    router.get('/:companyId', (request,response) => {
+        
+        
+                //Get the User ID
+                const companyId = request.params.userId
+        
+                //Use the model to find the id in the dbs
+                UserModel.findById(companyId)
+                .then((user) => {
+                    //Render it again and use users show
+                    response.render('users/show', {
+                        user: user
+                    })
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
+            })
+
     
 
 module.exports = router
